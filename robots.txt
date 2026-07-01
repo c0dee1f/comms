@@ -1,35 +1,51 @@
-# ====================================================================
-# ALLOWED SEARCH ENGINES
-# ====================================================================
+# As a condition of accessing this website, you agree to abide by the following
+# content signals:
 
-User-agent: Baiduspider
+# (a)  If a Content-Signal = yes, you may collect content for the corresponding
+#      use.
+# (b)  If a Content-Signal = no, you may not collect content for the
+#      corresponding use.
+# (c)  If the website operator does not include a Content-Signal for a
+#      corresponding use, the website operator neither grants nor restricts
+#      permission via Content-Signal with respect to the corresponding use.
+
+# The content signals and their meanings are:
+
+# search:   building a search index and providing search results (e.g., returning
+#           hyperlinks and short excerpts from your website's contents). Search does not
+#           include providing AI-generated search summaries.
+# ai-input: inputting content into one or more AI models (e.g., retrieval
+#           augmented generation, grounding, or other real-time taking of content for
+#           generative AI search answers).
+# ai-train: training or fine-tuning AI models.
+
+# ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS RESERVATIONS OF
+# RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT
+# AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
+
+User-agent: *
+Content-Signal: search=yes, ai-input=no, ai-train=no
 Allow: /
 
-User-agent: Bingbot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: Yandex
-Allow: /
-
-# ====================================================================
-# DISALLOWED AI CRAWLERS & DATA SCRAPERS
-# ====================================================================
-
-# Amazon
-User-agent: AmazonBot
+User-agent: Amazonbot
 Disallow: /
 
-# Anthropic
 User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bravebot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
 Disallow: /
 
 User-agent: ClaudeBot
@@ -38,65 +54,43 @@ Disallow: /
 User-agent: Claude-Web
 Disallow: /
 
-# Apple
-User-agent: Applebot-Extended
+User-agent: CloudflareBrowserRenderingCrawler
 Disallow: /
 
-# Brave AI
-User-agent: Bravebot
-Disallow: /
-
-# Bytedance
-User-agent: Bytespider
-Disallow: /
-
-# CoHere
 User-agent: cohere-ai
 Disallow: /
 
-# Common Crawl
-User-agent: CCBot
+User-agent: Diffbot
 Disallow: /
 
-# Google AI
 User-agent: Google-Extended
 Disallow: /
 
-# Meta
-User-agent: FacebookBot
-Disallow: /
-
-User-agent: Meta-ExternalAgent
-Disallow: /
-
-User-agent: Meta-ExternalFetcher
-Disallow: /
-
-# OpenAI
 User-agent: GPTBot
 Disallow: /
 
-User-agent: ChatGPT-User
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: meta-externalfetcher
 Disallow: /
 
 User-agent: OAI-SearchBot
-Disallow: /
-
-# Perplexity
-User-agent: PerplexityBot
-Disallow: /
-
-User-agent: PerplexityBot-Web
-Disallow: /
-
-# Independent Web Scrapers & Aggregators
-User-agent: Diffbot
 Disallow: /
 
 User-agent: Omgili
 Disallow: /
 
 User-agent: Omgilibot
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: PerplexityBot-Web
 Disallow: /
 
 User-agent: Scrapy
