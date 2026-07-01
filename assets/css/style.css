@@ -1,0 +1,268 @@
+/* Color palette */
+:root {
+    --bg-dark: #0a0a0a;
+    --neon-pink: #ff007f;
+    --neon-green: #39ff14;
+    --neon-cyan: #00ffff;
+    --neon-yellow: #fff000;
+    --paper: #f4f4f4;
+    --paper-dark: #1a1a1a;
+    --tape-gray: #777;
+    --font-mono: 'Share Tech Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--paper);
+    font-family: var(--font-mono);
+    overflow-x: hidden;
+    position: relative;
+    padding: 2rem;
+}
+
+a {
+    color: inherit;
+}
+
+/* Simulated grain/noise background */
+.background-noise {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Header & glitch effect */
+.zine-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.glitch {
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: lowercase;
+    position: relative;
+    color: var(--paper);
+    text-shadow: 0.05em 0 0 var(--neon-pink), -0.025em -0.05em 0 var(--neon-green),
+                 0.025em 0.05em 0 var(--neon-cyan);
+    animation: glitch 1s infinite;
+}
+
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--neon-pink);
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--neon-cyan);
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--neon-green);
+    letter-spacing: 5px;
+    background: #000;
+    display: inline-block;
+    padding: 0.2rem 1rem;
+    border: 2px dashed var(--neon-green);
+    transform: rotate(-2deg);
+}
+
+/* Glitch keyframes */
+@keyframes glitch-anim {
+    0% { clip: rect(44px, 9999px, 83px, 0); }
+    20% { clip: rect(10px, 9999px, 98px, 0); }
+    40% { clip: rect(61px, 9999px, 20px, 0); }
+    60% { clip: rect(85px, 9999px, 51px, 0); }
+    80% { clip: rect(27px, 9999px, 32px, 0); }
+    100% { clip: rect(65px, 9999px, 88px, 0); }
+}
+@keyframes glitch-anim-2 {
+    0% { clip: rect(29px, 9999px, 86px, 0); }
+    20% { clip: rect(13px, 9999px, 14px, 0); }
+    40% { clip: rect(72px, 9999px, 48px, 0); }
+    60% { clip: rect(98px, 9999px, 60px, 0); }
+    80% { clip: rect(4px, 9999px, 19px, 0); }
+    100% { clip: rect(85px, 9999px, 41px, 0); }
+}
+
+/* Hero/mascot area */
+.mascot-container {
+    border: 5px solid var(--neon-yellow);
+    background: #111;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(1.5deg);
+    margin: 0 auto;
+    margin-bottom: 50px;
+    position: relative;
+    box-shadow: -8px 8px 0 var(--neon-pink);
+    max-width: 800px;
+}
+
+.mascot-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.2) grayscale(0.2); /* Gives it a slightly gritty look */
+}
+
+/* Fake piece of tape holding the image down */
+.tape {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    height: 35px;
+    width: 120px;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+    backdrop-filter: blur(2px);
+    z-index: 10;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Typography & Highlights */
+h1, h2, h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.highlight-pink { background-color: var(--neon-pink); color: #000; padding: 2px 5px; }
+.highlight-cyan { background-color: var(--neon-cyan); color: #000; padding: 2px 5px; }
+
+.kaomoji {
+    white-space: nowrap;
+}
+
+/* Layout container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    color: #f4f4f4;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+/* Main content (stacked articles) */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+article {
+    background: #222;
+    padding: 25px;
+    border-left: 10px solid var(--neon-pink);
+    position: relative;
+    transform: rotate(0.5deg);
+}
+
+article:nth-child(even) {
+    border-left: none;
+    border-right: 10px solid var(--neon-cyan);
+    transform: rotate(-1deg);
+}
+
+article:nth-child(3n) {
+    border-left: 10px solid var(--neon-green);
+    transform: rotate(0.5deg);
+}
+
+article p {
+    margin: 10px 0;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+}
+
+.article-meta {
+    font-size: 0.9rem;
+    color: var(--neon-green);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: var(--neon-pink);
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #000;
+}
+
+.read-more:hover {
+    background: #000;
+    color: var(--neon-pink);
+    border-color: var(--neon-pink);
+}
+
+/* About & contact sections */
+.sidebar-section {
+    background: repeating-linear-gradient(
+        45deg,
+        #111,
+        #111 10px,
+        #222 10px,
+        #222 20px
+    );
+    border: 3px solid #fff;
+    padding: 20px;
+    margin-top: 40px;
+    box-shadow: -8px 8px 0 var(--neon-yellow);
+}
+
+.sidebar-section p {
+    margin: 20px 0;
+}
+
+.sidebar-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer section */
+footer {
+    margin-top: 60px;
+    text-align: center;
+    border-top: 2px dashed var(--tape-gray);
+    padding-top: 20px;
+    color: var(--tape-gray);
+}

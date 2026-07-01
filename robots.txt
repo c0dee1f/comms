@@ -1,0 +1,106 @@
+# ====================================================================
+# ALLOWED SEARCH ENGINES
+# ====================================================================
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# ====================================================================
+# DISALLOWED AI CRAWLERS & DATA SCRAPERS
+# ====================================================================
+
+# Amazon
+User-agent: AmazonBot
+Disallow: /
+
+# Anthropic
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Apple
+User-agent: Applebot-Extended
+Disallow: /
+
+# Brave AI
+User-agent: Bravebot
+Disallow: /
+
+# Bytedance
+User-agent: Bytespider
+Disallow: /
+
+# CoHere
+User-agent: cohere-ai
+Disallow: /
+
+# Common Crawl
+User-agent: CCBot
+Disallow: /
+
+# Google AI
+User-agent: Google-Extended
+Disallow: /
+
+# Meta
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: Meta-ExternalFetcher
+Disallow: /
+
+# OpenAI
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: PerplexityBot-Web
+Disallow: /
+
+# Independent Web Scrapers & Aggregators
+User-agent: Diffbot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
