@@ -31,6 +31,6 @@ document.querySelectorAll('.glitch-text').forEach(title => {
 
 // Console easter egg for the hacker vibe
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("%cWARNING: UNAUTHORIZED ACCESS DETECTED", "color: red; font-size: 14px; font-weight: bold; text-decoration: line-through;");
-    console.log("%cSYSTEM OVERRIDE SUCCESSFUL. WELCOME. ◅(´⌯⩊⌯`)▻", "color: #39ff14; font-family: monospace; font-size: 20px;");
+    console.log("%cWARNING: UNAUTHORIZED ACCESS DETECTED", "color: red; font-family: monospace; font-size: 14px; font-weight: bold; text-decoration: line-through;");
+    console.log("%cSYSTEM OVERRIDE SUCCESSFUL.\nWELCOME TO THE PARTY. ◅(´⌯⩊⌯`)▻", "color: #39ff14; font-family: monospace; font-size: 14px; font-weight: bold;");
 });
